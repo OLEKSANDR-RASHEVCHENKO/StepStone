@@ -12,7 +12,7 @@ public class DataProviders {
     @DataProvider
     public Iterator<Object[]> invalidEmail(){
         List<Object[]> list = new ArrayList<>();
-        list.add(new Object[]{faker.internet().uuid(),faker.internet().password()});
+        list.add(new Object[]{faker.internet().uuid()});
         return list.iterator();
     }
 
