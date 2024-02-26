@@ -7,21 +7,18 @@ import org.testng.annotations.Test;
 
 import static e2e.tests.BaseTest.app;
 
-public class UserCanNotLoginTest {
+public class UserCanNotLoginTest extends BaseTest{
     StartPage startPage;
     HomePage homePage;
     //Should be finish
     @Test(dataProvider = "invalidEmail", dataProviderClass = DataProviders.class)
-    public void userCanNotLoginTest(String email){
-        String password = "Gazmanov1234";
+    public void userCanNotLoginTest(String email,String password){
         startPage = new StartPage(app.driver);
         startPage.cookiesAgree();
         startPage.waitForLoading();
         startPage.clickOnLogin();
         startPage.waitForLoadingDialog();
         startPage.loginInSystem(email,password);
-
-        homePage = new HomePage(app.driver);
-        homePage.waitForLoadingHomePage();
+        startPage.waitForVisibilityErrorMassage();
     }
 }

@@ -32,6 +32,8 @@ public class StartPage extends BasePage {
     WebElement einloggenButton;
     @FindBy(xpath = "//*[@id='stepstone-checkbox-31']")
     WebElement checkBoxOnEinloggenBleiben;
+    @FindBy(xpath = "//*[@data-testid='login-error-alert']")
+    WebElement errorMassage;
 
     public void cookiesAgree() {
         getWait().forVisibility(cookiesDialog);
@@ -40,6 +42,9 @@ public class StartPage extends BasePage {
 
     public void waitForLoading() {
         getWait().forVisibility(header);
+    }
+    public void waitForVisibilityErrorMassage() {
+        getWait().forVisibility(errorMassage);
     }
 
     public void clickOnLogin() {
