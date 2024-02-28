@@ -45,6 +45,10 @@ public class StartPage extends BasePage {
     }
     public void waitForVisibilityErrorMassage() {
         getWait().forVisibility(errorMassage);
+        takeScreenshotErrorMessage();
+    }
+    public void takeScreenshotErrorMessage(){
+        takeAndCompareScreenshot("errorMessageOnLoginPage",errorMassage);
     }
 
     public void clickOnLogin() {
@@ -53,6 +57,7 @@ public class StartPage extends BasePage {
     }
     public void loginInSystem(String email,String password){
         emailInputField.sendKeys(email);
+        takeAndCompareScreenshot("emailOnLoginPage",emailInputField);
         passwordInputField.sendKeys(password);
         checkBoxOnEinloggenBleiben.click();
         einloggenButton.click();

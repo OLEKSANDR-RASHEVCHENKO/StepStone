@@ -26,5 +26,14 @@ dependencies {
 }
 
 test {
-    useJUnitPlatform()
+    useTestNG()
+    retry{
+        maxRetries = 3
+    }
+
+    testLogging {
+        events "passed","skipped","failed","standardOut","standardError"
+        exceptionFormat "full"
+    }
+    systemProperty'allure.result.directory','build/allure-results'
 }

@@ -24,6 +24,7 @@ public class UserCanSeatchVacancy extends BaseTest{
 
         homePage = new HomePage(app.driver);
         homePage.waitForLoadingHomePage();
+        homePage.takeScreenshotHalloHeader();
         homePage.searchAnJob(job);
         homePage.waitForVacanciesToLoad();
         int actualVacancyCount = homePage.getVacanciesCount();

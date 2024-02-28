@@ -21,5 +21,6 @@ public class UserCanLoginInSystem extends BaseTest{
 
         homePage = new HomePage(app.driver);
         homePage.waitForLoadingHomePage();
+        homePage.takeScreenshotHalloHeader();
     }
 }

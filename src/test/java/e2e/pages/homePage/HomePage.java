@@ -57,6 +57,9 @@ public class HomePage extends BasePage {
         getWait().forClickable(jobsFindenButton);
         Assert.assertTrue(halloHeaderOnHomePage.isDisplayed());
     }
+    public void takeScreenshotHalloHeader(){
+        takeAndCompareScreenshot("halloHeaderOnHomePage",halloHeaderOnHomePage);
+    }
 
     public void searchAnJob(String job) {
         jobFormField.sendKeys(job + Keys.ENTER);

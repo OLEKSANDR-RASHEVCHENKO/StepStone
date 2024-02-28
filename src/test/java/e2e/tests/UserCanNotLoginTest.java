@@ -9,9 +9,7 @@ import static e2e.tests.BaseTest.app;
 
 public class UserCanNotLoginTest extends BaseTest{
     StartPage startPage;
-    HomePage homePage;
-    //Should be finish
-    @Test(dataProvider = "invalidEmail", dataProviderClass = DataProviders.class)
+    @Test(dataProvider = "invalidData", dataProviderClass = DataProviders.class)
     public void userCanNotLoginTest(String email,String password){
         startPage = new StartPage(app.driver);
         startPage.cookiesAgree();

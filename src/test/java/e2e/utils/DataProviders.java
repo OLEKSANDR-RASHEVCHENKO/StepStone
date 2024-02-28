@@ -10,9 +10,11 @@ import java.util.List;
 public class DataProviders {
     Faker faker = new Faker();
     @DataProvider
-    public Iterator<Object[]> invalidEmail(){
+    public Iterator<Object[]> invalidData(){
         List<Object[]> list = new ArrayList<>();
-        list.add(new Object[]{"rashevchenkooooo@mail.com","Gazmanov1234"});
+        list.add(new Object[]{faker.internet().emailAddress(),"Gazmanov1234"});
+        list.add(new Object[]{"rashevchenkooleksandr@gmail.com",faker.internet().password()});
+        list.add(new Object[]{faker.internet().emailAddress(),faker.internet().password()});
         return list.iterator();
     }
 
